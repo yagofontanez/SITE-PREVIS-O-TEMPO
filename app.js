@@ -9,7 +9,7 @@ function consultarClima() {
     return;
   }
 
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${apiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${apiKey}`;
 
   obterDadosClima(apiUrl);
 }
