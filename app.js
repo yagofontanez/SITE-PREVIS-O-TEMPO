@@ -20,15 +20,15 @@ async function obterDadosClima(apiUrl) {
     const dadosClima = resposta.data;
 
     
-const weatherInfoContainer = document.getElementById('weather-info'); )
+const weatherInfoContainer = document.getElementById('weather-info');
     weatherInfoContainer.innerHTML = `
       <p>Cidade: ${dadosClima.name}</p>
       <p>Temperatura: ${dadosClima.main.temp}°C</p>
       <p>Condição do tempo: ${dadosClima.weather[0].description}</p>
     `;
-catch (erro) {
-    console.error('Erro ao obter dados do clima:', erro.message); 
-}
+  } catch (erro) {
+    console.error('Erro ao obter dados do clima:', erro.message);
+  }
 
   }
 }
