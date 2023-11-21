@@ -20,17 +20,18 @@ async function obterDadosClima(apiUrl) {
     const dadosClima = resposta.data;
 
     
-    const weatherInfoContainer = document.getElementById('weather-info');
+   if( const weatherInfoContainer = document.getElementById('weather-info'); ) {
     weatherInfoContainer.innerHTML = `
       <p>Cidade: ${dadosClima.name}</p>
       <p>Temperatura: ${dadosClima.main.temp}°C</p>
       <p>Condição do tempo: ${dadosClima.weather[0].description}</p>
     `;
-  } catch (erro) {
+  } else { catch (erro) {
     console.error('Erro ao obter dados do clima:', erro.message);
   weatherInfoContainer.innerHTML = `
     <p>Cidade não encontrada</p>`;
   } 
+  }
 
   }
 }
