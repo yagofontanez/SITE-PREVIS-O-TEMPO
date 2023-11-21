@@ -28,5 +28,7 @@ async function obterDadosClima(apiUrl) {
     `;
   } catch (erro) {
     console.error('Erro ao obter dados do clima:', erro.message);
+    weatherInfoContainer.innerHTML = '
+      <p>Cidade não encontrada</p>';
   }
 }
