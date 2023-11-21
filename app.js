@@ -26,9 +26,9 @@ const weatherInfoContainer = document.getElementById('weather-info'); )
       <p>Temperatura: ${dadosClima.main.temp}°C</p>
       <p>Condição do tempo: ${dadosClima.weather[0].description}</p>
     `;
-catch (erro)
+catch (erro) {
     console.error('Erro ao obter dados do clima:', erro.message); 
-
+}
 
   }
 }
