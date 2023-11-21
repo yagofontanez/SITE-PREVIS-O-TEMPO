@@ -31,4 +31,4 @@ const weatherInfoContainer = document.getElementById('weather-info');
   }
 
   }
-}
+
