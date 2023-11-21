@@ -30,8 +30,6 @@ const weatherInfoContainer = document.getElementById('weather-info');
     `;
   } catch (erro) {
     console.error('Erro ao obter dados do clima:', erro.message);
-     weatherInfoContainer.innerHTML = `
-      <p>Cidade não encontrada</p>`;
   }
 
   }
