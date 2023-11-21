@@ -1,4 +1,3 @@
-import axios from 'axios';
 const apiKey = 'c3828d0b5a4485ab662cf88ad9997d1d';
 
 function consultarClima() {
