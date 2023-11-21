@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const apiKey = 'c3828d0b5a4485ab662cf88ad9997d1d';
 
 function consultarClima() {
@@ -21,7 +20,6 @@ async function obterDadosClima(apiUrl) {
     const resposta = await axios.get(apiUrl);
     const dadosClima = resposta.data;
 
-    console.log('Dados do clima:', dadosClima);
     
 const weatherInfoContainer = document.getElementById('weather-info');
     weatherInfoContainer.innerHTML = `
@@ -34,4 +32,3 @@ const weatherInfoContainer = document.getElementById('weather-info');
   }
 
   }
-
