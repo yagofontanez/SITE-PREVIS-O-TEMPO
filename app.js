@@ -21,6 +21,7 @@ async function obterDadosClima(apiUrl) {
     const resposta = await axios.get(apiUrl);
     const dadosClima = resposta.data;
 
+    console.log('Dados do clima:', dadosClima);
     
 const weatherInfoContainer = document.getElementById('weather-info');
     weatherInfoContainer.innerHTML = `
