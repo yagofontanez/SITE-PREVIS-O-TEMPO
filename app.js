@@ -15,18 +15,23 @@ function consultarClima() {
 }
 
 async function obterDadosClima(apiUrl) {
-  try {
-    const resposta = await axios.get(apiUrl);
-    const dadosClima = resposta.data;
-
-    
-const weatherInfoContainer = document.getElementById('weather-info');
-    weatherInfoContainer.innerHTML = `
-      <p>Cidade: ${dadosClima.name}</p>
-      <p>Temperatura: ${dadosClima.main.temp}°C</p>
-      <p>Condição do tempo: ${dadosClima.weather[0].description}</p>`;
-  } catch (erro) {
-    console.error('Erro ao obter dados do clima:', erro.message);
+    try {
+      const resposta = await axios.get(apiUrl);
+      const dadosClima = resposta.data;
+  
+      const weatherInfoContainer = document.getElementById('weather-info');
+      weatherInfoContainer.innerHTML = `
+          <p>Cidade: ${dadosClima.name}</p>
+          <p>Temperatura: ${dadosClima.main.temp}°C</p>
+          <p>Condição do tempo: ${dadosClima.weather[0].description}</p>`;
+    } catch (erro) {
+      if (erro.response.status === 404) {
+        const weatherInfoContainer = document.getElementById('weather-info');
+        weatherInfoContainer.innerHTML = `<p>Cidade não encontrada.</p>`;
+      } else {
+        console.error('Erro ao obter dados do clima:', erro.message);
+      }
+    }
   }
+  
 
-  }
